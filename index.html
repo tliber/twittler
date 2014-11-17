@@ -30,7 +30,10 @@
         $(".inputVals").on('click','button', function(){
             var handleToAdd = document.getElementById('handle').value;  //= $(":input").val();
             var messageToAdd = document.getElementById('comment').value;
-          
+            console.log($(tweet));
+            // streams[streams.home.length].user = handleToAdd;
+            // streams[streams.home.length].message = messageToAdd;
+
         })
         
 
@@ -38,7 +41,7 @@
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
+          $tweet.text('@' + tweet.user + ': ' + tweet.message + ' created on ' + tweet.created_at);
           $tweet.appendTo($body);
           index -= 1;
         }

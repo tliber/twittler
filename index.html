@@ -8,21 +8,31 @@
     <h1 id = "pageTop"></h1>
     
     <div class = inputVals>
-      <form>Handle:<br>
-        <input type="text" name="firstname">
-        <br>
-        Lure:
-        <br>
-        <textarea cols="50" rows="4" name="comment"></textarea>
+      <form>
+        <br>Handle:</br>
+        <div class= "userName"> <input type="text" id="handle"> 
+        </div>
+        <br>Lure:</br>
+        <div class = 'message'> 
+          <textarea cols="50" rows="4" id="comment"></textarea>
+        </div>
       </form>
     
     <button type="button">Click Me!</button>
+    </div>
     <script>
 
       $(document).ready(function(){
+        
         var $body = $('body');
-        $("#pageTop").text("wussup boris");
-        // $body.html('');
+        $("#pageTop").text("Twittlure");
+
+        $(".inputVals").on('click','button', function(){
+            var handleToAdd = document.getElementById('handle').value;  //= $(":input").val();
+            var messageToAdd = document.getElementById('comment').value;
+          
+        })
+        
 
         var index = streams.home.length - 1;
         while(index >= 0){

@@ -21,30 +21,41 @@
     <button type="button">Click Me!</button>
     </div>
     <script>
-
-      $(document).ready(function(){
+     testFunc = function(startTrigger){
         
-        var $body = $('body');
+        if (startTrigger === "startTrigger"){
+          console.log("first time running this function");
+          var index = 0}
+        else{
+          index = +$index;};
+          allLures = streams.home.length - 1;
+          while(index <= allLures){
+            var tweet = streams.home[index];
+            var $tweet = $('<div></div>');
+            $tweet.text('@' + tweet.user + ': ' + tweet.message + '   created on:  ' + tweet.created_at);
+             var $body = $('body');
+            // if ($tweet === 
+            $tweet.appendTo($body);
+            index += 1;
+          };
+        $index = index;
+        };
+
+      
+      $(document).ready(function(){
+        testFunc('startTrigger');
+        // var $body = $('body');
         $("#pageTop").text("Twittlure");
 
         $(".inputVals").on('click','button', function(){
-            var handleToAdd = document.getElementById('handle').value;  //= $(":input").val();
+            var handleToAdd = document.getElementById('handle').value;
             var messageToAdd = document.getElementById('comment').value;
             (streams.home).push({"user" : handleToAdd, "message" : messageToAdd});
-                // streams.home[streams.home.length].message = messageToAdd;
-            console.log(streams.home);
-        })
+          testFunc();
         
-        // loadTweets = function(){ 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message + '   created on:  ' + tweet.created_at);
-          $tweet.appendTo($body);
-          index -= 1;
-        };
+        })
 
+       
       });
 
     </script>

@@ -18,28 +18,28 @@
         </div>
       </form>
     
-    <button type="button">Click Me!</button>
+    <button type="button">Give it to me!</button>
     </div>
     <script>
      testFunc = function(startTrigger){
         
         if (startTrigger === "startTrigger"){
-          console.log("first time running this function");
           var index = 0}
         else{
           index = +$index;};
-          allLures = streams.home.length - 1;
-          while(index <= allLures){
-            var tweet = streams.home[index];
-            var $tweet = $('<div></div>');
-            $tweet.text('@' + tweet.user + ': ' + tweet.message + '   created on:  ' + tweet.created_at);
-             var $body = $('body');
-            // if ($tweet === 
-            $tweet.appendTo($body);
-            index += 1;
-          };
-        $index = index;
+          
+        allLures = streams.home.length - 1;
+        while(index <= allLures){
+          var tweet = streams.home[index];
+          var $tweet = $('<div></div>');
+          $tweet.text('@' + tweet.user + ': ' + tweet.message + '   created on:  ' + tweet.created_at);
+          var $body = $('body');
+          $tweet.appendTo($body);
+          index += 1;
         };
+        
+        $index = index;
+      };
 
       
       $(document).ready(function(){
@@ -48,9 +48,9 @@
         $("#pageTop").text("Twittlure");
 
         $(".inputVals").on('click','button', function(){
-            var handleToAdd = document.getElementById('handle').value;
-            var messageToAdd = document.getElementById('comment').value;
-            (streams.home).push({"user" : handleToAdd, "message" : messageToAdd});
+              var handleToAdd = document.getElementById('handle').value;
+              var messageToAdd = document.getElementById('comment').value;
+              (streams.home).push({"user" : handleToAdd, "message" : messageToAdd, "created_at": new Date()});
           testFunc();
         
         })

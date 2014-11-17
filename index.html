@@ -3,6 +3,7 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link rel="stylesheet" type="text/css" href="classy.css">
   </head>
   <body>
     <h1 id = "pageTop"></h1>
@@ -21,7 +22,8 @@
     <button type="button">Give it to me!</button>
     </div>
     <script>
-     testFunc = function(startTrigger){
+     
+     updateLures = function(startTrigger){
         
         if (startTrigger === "startTrigger"){
           var index = 0}
@@ -32,6 +34,7 @@
         while(index <= allLures){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
+          // console.log((tweet.created_at).getDate());
           $tweet.text('@' + tweet.user + ': ' + tweet.message + '   created on:  ' + tweet.created_at);
           var $body = $('body');
           $tweet.appendTo($body);
@@ -43,15 +46,15 @@
 
       
       $(document).ready(function(){
-        testFunc('startTrigger');
-        // var $body = $('body');
+        updateLures('startTrigger');
+        // var $body = $('body');w
         $("#pageTop").text("Twittlure");
 
         $(".inputVals").on('click','button', function(){
               var handleToAdd = document.getElementById('handle').value;
               var messageToAdd = document.getElementById('comment').value;
               (streams.home).push({"user" : handleToAdd, "message" : messageToAdd, "created_at": new Date()});
-          testFunc();
+          updateLures();
         
         })
 

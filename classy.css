@@ -1,7 +1,8 @@
 body {
-    background-color: orange;
+    background-image: url("bgGreatGoat.jpg");
 }
 h1 {
     color: red;
-    /*margin-left: 20px;*/
+    font-size: 40px;
+    font-family: Impact, Charcoal, sans-serif
 }

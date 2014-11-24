@@ -16,10 +16,11 @@ h1 {
 }
 #inputVals {
 	height: 1000px;
+	color: yellow;
 
 }
 #comment{
-	background-image: url("goatsMingle.jpg");
+	background-image: url("goatsRamming.jpg");
 	/*background-image: url('goatBoxComment.jpg');*/
 	color: yellow;
 	height: 170px;
@@ -27,7 +28,7 @@ h1 {
 	margin:0px auto;
 	/*margin-left: auto;*/
     /*margin-right: auto;*/
-    width: 120em;
+    width: 60em;
 	text-align: center;
 	
 }

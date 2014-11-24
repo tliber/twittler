@@ -10,19 +10,38 @@
     
     <div class = inputVals>
       <form>
-        <br>Handle:</br>
+        <br>Goat</br>
         <div class= "userName"> <input type="text" id="handle"> 
         </div>
-        <br>Lure:</br>
+        <br>Scream</br>
         <div class = 'message'> 
           <textarea cols="50" rows="4" id="comment"></textarea>
         </div>
       </form>
     
-    <button type="button">Give it to me!</button>
+    <button ztype="button">BAAAAA!</button>
     </div>
     <script>
-     
+     addRow = function(goats,goatCall,goatTime){
+         if (!document.getElementsByTagName) return;
+         tabBody=document.getElementsByTagName("tbody").item(0);
+         row=document.createElement("tr");
+         cell1 = document.createElement("td");
+         cell2 = document.createElement("td");
+         cell3 = document.createElement("td");
+         textnode1=document.createTextNode("@" + goats);
+         textnode2=document.createTextNode(goatCall);
+         textnode3=document.createTextNode(goatTime);
+         cell1.appendChild(textnode1);
+         cell2.appendChild(textnode2);
+         cell3.appendChild(textnode3);
+         row.appendChild(cell1);
+         row.appendChild(cell2);
+         row.appendChild(cell3);
+         tabBody.appendChild(row);
+
+
+    };
      updateLures = function(startTrigger){
         
         if (startTrigger === "startTrigger"){
@@ -33,11 +52,7 @@
         allLures = streams.home.length - 1;
         while(index <= allLures){
           var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          // console.log((tweet.created_at).getDate());
-          $tweet.text('@' + tweet.user + ': ' + tweet.message + '   created on:  ' + tweet.created_at);
-          var $body = $('body');
-          $tweet.appendTo($body);
+          addRow(tweet.user,tweet.message,tweet.created_at);
           index += 1;
         };
         
@@ -47,8 +62,7 @@
       
       $(document).ready(function(){
         updateLures('startTrigger');
-        // var $body = $('body');w
-        $("#pageTop").text("Twittlure");
+        $("#pageTop").text("TwitterGoat");
 
         $(".inputVals").on('click','button', function(){
               var handleToAdd = document.getElementById('handle').value;
@@ -62,5 +76,16 @@
       });
 
     </script>
+    <div id = "tweetTable">
+      <table border='1' id='mytable'>
+        <tbody>
+          <tr>
+            <th>Goat</th>
+              <th>Scream!</th>
+              <th>Time</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>

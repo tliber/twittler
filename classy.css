@@ -1,8 +1,66 @@
 body {
-    background-image: url("bgGreatGoat.jpg");
+    background-image: url("treeGoats.jpg");
+
 }
+
 h1 {
-    color: red;
-    font-size: 40px;
-    font-family: Impact, Charcoal, sans-serif
+    color: yellow;
+    
+
+    font-size: 70px;
+    font-stretch: expanded;
+    font-family: Impact, Charcoal, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10em;
 }
+#inputVals {
+	height: 1000px;
+
+}
+#comment{
+	background-image: url("goatsMingle.jpg");
+	/*background-image: url('goatBoxComment.jpg');*/
+	color: yellow;
+	height: 170px;
+	/*width: 75%;*/
+	margin:0px auto;
+	/*margin-left: auto;*/
+    /*margin-right: auto;*/
+    width: 120em;
+	text-align: center;
+	
+}
+#mytable{
+	border-collapse: collapse;
+	color: CC0033;
+	text-align: center;
+	font-size: 100%;
+	border: 5px solid black;
+	/*color: blue;*/
+	width: 50%;
+	background-image: url("grassBackground.jpg");
+	/*margin-left: auto;*/
+    /*margin-right: auto;*/
+    width: 120em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+th {
+    
+    border: 5px solid black;
+    height: 30px;
+    color: orange;
+	/*text-align: center;*/
+	font-size: 170%
+}
+td{
+	border: 5px solid black;
+	color: orange;
+	/*text-align: center;*/
+	font-size: 170%;
+	/*margin-left: auto;*/
+    /*margin-right: auto;*/
+    width: 10em
+}
+

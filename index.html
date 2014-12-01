@@ -116,27 +116,34 @@
         
         
         })
-        
-        
-        var table = document.getElementById("mytable");
-        console.log(table);
-        var cellOfHandle = table.getElementsByTagName("td");
-        console.log(cellOfHandle);
-        
-        for (var i = 0; i < cellOfHandle.length; i++){
-          cellOfHandle[i].onclick = function(){
-            // console.log(this.);
-            var selectedHandle = this.innerHTML;
-            re = /@*/;
+        $(document).on('click','td', function(){
+          var selectedHandle = this.innerHTML;
+          re = /@*/;
             if ((selectedHandle.match(re))!== null){
               // console.log('yay')
               selectedHandle = selectedHandle.replace('@','');
               showSpecName(selectedHandle);
-            };
+                }
+          });     
+        
+        // var table = document.getElementById("mytable");
+        // console.log(table);
+        // var cellOfHandle = table.getElementsByTagName("td");
+        // console.log(cellOfHandle);
+        
+        // for (var i = 0; i < cellOfHandle.length; i++){
+          // cellOfHandle[i].onclick = function(){
+            // console.log(this.);
+            // var selectedHandle = this.innerHTML;
+            // re = /@*/;
+            // if ((selectedHandle.match(re))!== null){
+              // console.log('yay')
+              // selectedHandle = selectedHandle.replace('@','');
+              // showSpecName(selectedHandle);
+            // };
               
-          }
-
-        };
+          
+        
        
       });
 
